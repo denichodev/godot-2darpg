@@ -1,15 +1,15 @@
 #GrassEffect
 extends AnimatedSprite
 
-var onFinish;
+enum {
+	DESTROY = 0,
+	SHAKE = 1
+}
 
-func playDestroyed(_onDestroy):
-	onFinish = _onDestroy;
+func playDestroyed():
+	connect("animation_finished", get_parent(), "onGrassEffectAnimationFinished", [DESTROY]);
 	self.play("Destroyed");
 
-func playShake(_onShake):
-	onFinish = _onShake;
+func playShake():
+	connect("animation_finished", get_parent(), "onGrassEffectAnimationFinished", [SHAKE]);
 	self.play("Shake");
-
-func _on_GrassEffect_animation_finished():
-	onFinish.call_func();
