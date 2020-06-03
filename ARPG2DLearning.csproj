@@ -8,7 +8,7 @@
     <OutputPath>.mono\temp\bin\$(Configuration)</OutputPath>
     <RootNamespace>ARPG2DLearning</RootNamespace>
     <AssemblyName>ARPG2DLearning</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <GodotProjectGeneratorVersion>1.0.7374.16792</GodotProjectGeneratorVersion>
     <BaseIntermediateOutputPath>.mono\temp\obj</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(Configuration)</IntermediateOutputPath>
@@ -43,12 +43,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GodotSharp">
-      <HintPath>$(ProjectDir)\.mono\assemblies\$(ApiConfiguration)\GodotSharp.dll</HintPath>
       <Private>False</Private>
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharp.dll</HintPath>
     </Reference>
     <Reference Include="GodotSharpEditor" Condition=" '$(Configuration)' == 'Tools' ">
-      <HintPath>$(ProjectDir)\.mono\assemblies\$(ApiConfiguration)\GodotSharpEditor.dll</HintPath>
       <Private>False</Private>
+      <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharpEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>

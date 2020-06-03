@@ -7,18 +7,17 @@ func attacked():
 	sprite.visible = false;
 	var grassEffect = GrassEffect.instance();
 	self.add_child(grassEffect)
-	grassEffect.playDestroyed();
+	grassEffect.playAnimation();
 
 func destroy():
 	queue_free();
 
-func onGrassEffectAnimationFinished(finishedAnimation):
+func onEffectAnimationFinished(finishedAnimation):
 	match finishedAnimation:
 		0:
 			destroy();
 		1:
 			print("Shaked");
-	queue_free();
 
 func _on_Hurtbox_area_entered(area):
 	attacked();
